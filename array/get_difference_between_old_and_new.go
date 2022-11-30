@@ -66,7 +66,6 @@ func GetDifference[T any](option Option, oldData []T, newData []T) (data []T) {
 			data = append(data, ch)
 		}
 	}
-	fmt.Println(data)
 	//return final data
 	return
 }
