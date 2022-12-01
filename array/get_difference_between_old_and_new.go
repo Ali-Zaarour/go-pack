@@ -1,13 +1,15 @@
 package array
 
-import "fmt"
-
+// Option
+// case used to define method functionality
 type Option struct {
 	Case
 }
 
+// Case param type
 type Case string
 
+// enum
 const (
 	CreateArray Case = "create"
 	DeleteArray Case = "delete"
@@ -61,7 +63,6 @@ func GetDifference[T any](option Option, oldData []T, newData []T) (data []T) {
 
 	// comparing step
 	for _, ch := range child {
-		fmt.Println(existData[ch])
 		if !existData[ch] {
 			data = append(data, ch)
 		}
