@@ -1,12 +1,6 @@
-package array
+package farray
 
-// Option
-// case used to define method functionality
-type Option struct {
-	Case
-}
-
-// Case param type
+// Case used to define method functionality
 type Case string
 
 // enum
@@ -25,10 +19,10 @@ const (
 //
 // y := []int{5, 6}
 //
-// result := GetDifference[int](Option{Case: array.DeleteArray}, x, y)
+// result := GetDifference[int](farray.DeleteArray, x, y)
 //
 // result will contain the data that we need to delete in our case
-func GetDifference[T any](option Option, oldData []T, newData []T) (data []T) {
+func GetDifference[T any](option Case, oldData []T, newData []T) (data []T) {
 
 	//if old data = nil or old data length = 0 and the new data length > 0
 	//return new data
@@ -46,10 +40,10 @@ func GetDifference[T any](option Option, oldData []T, newData []T) (data []T) {
 	//else if delete then parent as new and child as old
 	var parent, child []T
 	switch {
-	case option.Case == CreateArray:
+	case option == CreateArray:
 		parent, child = oldData, newData
 
-	case option.Case == DeleteArray:
+	case option == DeleteArray:
 		parent, child = newData, oldData
 	}
 
