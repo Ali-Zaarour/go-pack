@@ -26,13 +26,13 @@ type KeepFunc[E any] func(E) bool
 //		t Two
 //	}
 //
-//	ex := []Data{
+//	ex := []*Data{
 //		{o: One{id: 1}, t: Two{id: "one"}},
 //		{o: One{id: 2}},
 //		{o: One{id: 3}, t: Two{id: "three"}},
 //	}
 //
-//	result := GetArrayOfAny[Data, string](ex, func(item Data) string {
+//	result := GetArrayOfAny[Data, string](ex, func(item *Data) string {
 //		return item.t.id
 //	})
 //
