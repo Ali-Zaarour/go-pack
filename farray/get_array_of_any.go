@@ -37,7 +37,7 @@ type KeepFunc[E any] func(E) bool
 //	})
 //
 // result -> [one three]
-func GetArrayOfAny[Model any, Result comparable](model []Model, f getSpecificModel[Model, Result]) (result []Result) {
+func GetArrayOfAny[Model any, Result comparable](model []*Model, f getSpecificModel[*Model, Result]) (result []Result) {
 
 	//check every index and return an element based on passed func
 	for i := range model {
